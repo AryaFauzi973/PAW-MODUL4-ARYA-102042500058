@@ -18,8 +18,9 @@ class Buku extends Model
         'tahun_terbit',
         'stok',
         // TODO 2: Tambahkan kolom 'cover' pada properti $fillable
+        
     ];
-
+        
     public function peminjaman()
     {
         return $this->hasMany(Peminjaman::class, 'buku_id');

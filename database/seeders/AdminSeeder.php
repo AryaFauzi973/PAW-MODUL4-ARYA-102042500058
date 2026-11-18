@@ -8,12 +8,8 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
-    /**
-     * Membuat akun Admin Perpustakaan dan Mahasiswa default.
-     */
     public function run(): void
     {
-        // 1. Akun Admin Perpustakaan
         if (!User::where('email', 'admin@telkomlibrary.ac.id')->exists()) {
             User::create([
                 'name'              => 'Admin Perpustakaan',
@@ -24,7 +20,6 @@ class AdminSeeder extends Seeder
             ]);
         }
 
-        // 2. Akun Mahasiswa Dummy untuk Pengujian Role & Middleware
         if (!User::where('email', 'mahasiswa@telkomlibrary.ac.id')->exists()) {
             User::create([
                 'name'              => 'Rio Mahasiswa',
